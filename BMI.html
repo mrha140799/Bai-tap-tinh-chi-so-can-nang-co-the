@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CodeGym</title>
+</head>
+<body>
+<form name="fmInput">
+    Mời bạn nhập vào chiều cao : <input type="text" name="txtHeight"> <br> <br>
+    Mời bạn nhập vào cân nặng : <input type="text" name="txtWeight" > <br> <br>
+    <button type="button" onclick="ShowBMI();">Xác nhận</button>
+</form>
+<hr> <br>
+<h1 id="idMess"></h1>
+<script>
+    function ShowBMI() {
+        var height = parseFloat(document.fmInput.txtHeight.value);
+        var weight = parseFloat(document.fmInput.txtWeight.value);
+        var mess = document.getElementById("idMess");
+        var bmi = weight / Math.pow(height,2);
+        if (bmi < 18) {
+            mess.innerText = "Underweight";
+        }else if (bmi < 25.0) {
+            mess.innerText = "Normal";
+        }else if (bmi < 30.0) {
+            mess.innerText = "Overweight";
+        }else {
+            mess.innerText = "Obese";
+        }
+
+
+    }
+</script>
+
+</body>
+</html>
